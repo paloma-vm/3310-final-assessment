@@ -26,10 +26,10 @@ function displayInfo() {
     const lastPayment = new D(data.lastpayment)
     const lastPaymentDate = lastPayment.when()
 
-    const printOut = `Customer Information:\n\n${firstName} ${lastName}\n\n${make} ${model}
-        \n${purchasedDate}\n\n${lastPaymentDate}\n\n${customerPhone}\n\nCity: ${city}`
+    const printOut = console.log(`Customer Information:\n\n${firstName} ${lastName}\n\n${make} ${model}
+        \n${purchasedDate}\n\n${lastPaymentDate}\n\n${customerPhone}\n\nCity: ${city}`)
 
-    console.log(printOut)
+    return printOut
 }
 
 displayInfo()
