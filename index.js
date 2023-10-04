@@ -3,7 +3,7 @@ function formatPhone(phoneNumber) {
   const phoneStringInNumbers = Number(phoneString);
   // check length and check for non-numbers
   if ((phoneString.length === 10) && !Number.isNaN(phoneStringInNumbers)) {
-    const formattedPhone = '('.concat(phoneString.slice(0, 3), ') ').concat(phoneString.slice(3, 6), '-').concat(phoneString.slice(6));
+    const formattedPhone = `(${phoneString.slice(0, 3)}) ${phoneString.slice(3, 6)}-${phoneString.slice(6)}`;
     return formattedPhone;
   }
 
@@ -23,13 +23,11 @@ function displayInfo() {
   const purchasedDate = purchased.format('M d, Y');
   const lastPayment = new D(data.lastpayment);
   const lastPaymentDate = lastPayment.when();
-  const printOut = 'Customer Information:\n\n'.concat(firstName, ' ').concat(lastName, '\n\n').concat(make, ' ').concat(model, '\n        \n')
-    .concat(purchasedDate, '\n\n')
-    .concat(lastPaymentDate, '\n\n')
-    .concat(customerPhone, '\n\nCity: ')
-    .concat(city);
-  console.log(printOut);
+  const printOut = console.log(`Customer Information:\n\n${firstName} ${lastName}\n\n${make} ${model}
+        \n${purchasedDate}\n\n${lastPaymentDate}\n\n${customerPhone}\n\nCity: ${city}`);
+  return printOut;
 }
+displayInfo();
 // exports
 module.exports.displayInfo = displayInfo;
 module.exports.formatPhone = formatPhone;

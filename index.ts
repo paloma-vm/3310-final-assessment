@@ -1,4 +1,4 @@
-function formatPhone(phoneNumber: any) {
+function formatPhone(phoneNumber: Number | String): String {
     const phoneString = String(phoneNumber)
     const phoneStringInNumbers = Number(phoneString)
     // check length and check for non-numbers
